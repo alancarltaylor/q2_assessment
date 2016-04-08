@@ -11,13 +11,16 @@
 
 
 <div class='book-display-container'>
-  <p>{{data.first_name}}{{data.last_name}}</p>
+
+
   {{#data}}
   <div class='book-wrap'>
     <img src={{cover_url}} class='book-cover'>
     <div class='book-text'>
       <h1>{{title}}</h1>
+
       <h2>{{genre}}</h2>
+      <p>{{first_name}}{{last_name}}</p>
       <p>{{description}}</p>
     </div>
   </div><br><br><br>

@@ -10,29 +10,42 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/books', function(req, res, next) {
-    var data = {};
-    var first_name = {};
-    var last_name = {};
-    knex('books')
-      .then(function(results) {
-        data = results
-        //for (var i = 0; i < data[0].length; i ++){
-        //console.log()
-          // knex('authors_books')
-          // .where({book_id: data[i].book_id})
-          // .innerJoin('authors', 'authors_books.author_id', 'authors.author_id')
-          // .then(function(more_results){
-            //first_name = more_results.first_name;
-            //last_name = more_results.last_name;
-          //  console.log(first_name)
-            res.render('books', {
-            title: 'Galvanize-Reads',
-            data: data
-            })
-          });
-  //  }
-    //})
-});
+  var book_array = [];
+
+  return knex('books')
+    .then(function(results) {
+      for (var i = 0; i < results.length; i++) {
+        book_array.push({
+          book_id: results[i].book_id,
+          title: results[i].title,
+          genre: results[i].genre,
+          description: results[i].description,
+          cover_url: results[i].cover_url,
+          first_name: [],
+          last_name: []
+        })
+      }
+      return knex('books')
+        .innerJoin('authors_books', 'books.book_id', 'authors_books.book_id')
+        .innerJoin('authors', 'authors_books.author_id', 'authors.author_id')
+        .select('authors.first_name', 'authors.last_name', 'authors_books.book_id')
+        .then(function(more_results) {
+          for (var i = 0; i < book_array.length; i++) {
+            for (var j = 0; j < more_results.length; j++) {
+              if (book_array[i].book_id === more_results[j].book_id) {
+                book_array[i].first_name.push(more_results[j].first_name)
+                book_array[i].last_name.push(more_results[j].last_name)
+              }
+            }
+            //console.log(more_results)
+          }
+          res.render('books', {
+            data: book_array
+          })
+          console.log(book_array);
+        })
+    })
+})
 
 router.get('/books/new', function(req, res, next) {
   res.render('index', {
