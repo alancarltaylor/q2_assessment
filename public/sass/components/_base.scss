@@ -1,0 +1,123 @@
+header {
+  width: 100%;
+  p {
+    position: relative;
+    float: left;
+    margin-left: 2%;
+    margin-top: 1%;
+    width: 90%;
+  }
+  .logo {
+    float: left;
+    height: 80px;
+    width: 60px;
+    margin-left: 1%;
+  }
+}
+.landing-page {
+  display: inline-block;
+  width: 98%;
+  height: 550px;
+  .book-container {
+    margin: 1%;
+    float: left;
+    width: 48%;
+    height: 700px;
+    .book-logo {
+      height: 500px;
+      width: 100%;
+    }
+  }
+  .author-container {
+    margin: 1%;
+    float: left;
+    width: 48%;
+    height: 700px;
+    .author-logo {
+      height: 500px;
+      width: 100%;
+    }
+  }
+}
+.sidebar {
+  //border: solid black 2px;
+  width: 180px;
+  height: 500px;
+  margin-top: 1%;
+  margin-left: 1%;
+  float:left;
+  .author-sidebar{
+    //margin-top: 1%;
+    height: 250px;
+    border: solid black 2px;
+
+  }
+  .book-sidebar{
+    //margin-top: -3%;
+    height: 250px;
+    border-left: solid black 2px;
+    border-top: solid black 2px;
+    border-right: solid black 2px;
+    background-color: rgba(128, 69, 195, 0.7);
+
+  }
+  .author-sidebar2{
+    //margin-top: 1%;
+    height: 250px;
+    border: solid black 2px;
+    background-color: rgba(128, 69, 195, 0.7);
+
+
+  }
+  .book-sidebar2{
+    //margin-top: -3%;
+    height: 250px;
+    border-left: solid black 2px;
+    border-top: solid black 2px;
+    border-right: solid black 2px;
+
+  }
+  a {
+    text-decoration: none;
+
+  }
+  .tiny-logo {
+    height: 100px;
+    width: 100px;
+    border: solid black 1px;
+    margin-left: 21%;
+    margin-top: 2px;
+  }
+}
+.rotate {
+  -webkit-transform: rotate(-90deg);
+  margin-right: 20px;
+}
+
+.book-display-container {
+  margin-top: 1%;
+  width: 70%;
+  margin-left: 5%;
+  float: left;
+  background-color: blue;
+  border: solid black 2px;
+  .book-wrap {
+    overflow: auto;
+  }
+  h1 {
+    background-color: rgb(62, 134, 193);
+    padding-left: 1%;
+  }
+  .book-cover {
+    margin-top: 3%;
+    padding: 5px;
+    float: left;
+    width: 15%;
+    height: 200px;
+  }
+  .book-text {
+    padding: 10px;
+    float: right;
+    width: 81%;
+  }
+}

@@ -1,0 +1,106 @@
+header {
+  width: 100%; }
+  header p {
+    position: relative;
+    float: left;
+    margin-left: 2%;
+    margin-top: 1%;
+    width: 90%; }
+  header .logo {
+    float: left;
+    height: 80px;
+    width: 60px;
+    margin-left: 1%; }
+
+.landing-page {
+  display: inline-block;
+  width: 98%;
+  height: 550px; }
+  .landing-page .book-container {
+    margin: 1%;
+    float: left;
+    width: 48%;
+    height: 700px; }
+    .landing-page .book-container .book-logo {
+      height: 500px;
+      width: 100%; }
+  .landing-page .author-container {
+    margin: 1%;
+    float: left;
+    width: 48%;
+    height: 700px; }
+    .landing-page .author-container .author-logo {
+      height: 500px;
+      width: 100%; }
+
+.sidebar {
+  width: 180px;
+  height: 500px;
+  margin-top: 1%;
+  margin-left: 1%;
+  float: left; }
+  .sidebar .author-sidebar {
+    height: 250px;
+    border: solid black 2px; }
+  .sidebar .book-sidebar {
+    height: 250px;
+    border-left: solid black 2px;
+    border-top: solid black 2px;
+    border-right: solid black 2px;
+    background-color: rgba(128, 69, 195, 0.7); }
+  .sidebar .author-sidebar2 {
+    height: 250px;
+    border: solid black 2px;
+    background-color: rgba(128, 69, 195, 0.7); }
+  .sidebar .book-sidebar2 {
+    height: 250px;
+    border-left: solid black 2px;
+    border-top: solid black 2px;
+    border-right: solid black 2px; }
+  .sidebar a {
+    text-decoration: none; }
+  .sidebar .tiny-logo {
+    height: 100px;
+    width: 100px;
+    border: solid black 1px;
+    margin-left: 21%;
+    margin-top: 2px; }
+
+.rotate {
+  -webkit-transform: rotate(-90deg);
+  margin-right: 20px; }
+
+.book-display-container {
+  margin-top: 1%;
+  width: 70%;
+  margin-left: 5%;
+  float: left;
+  background-color: blue;
+  border: solid black 2px; }
+  .book-display-container .book-wrap {
+    overflow: auto; }
+  .book-display-container h1 {
+    background-color: #3e86c1;
+    padding-left: 1%; }
+  .book-display-container .book-cover {
+    margin-top: 3%;
+    padding: 5px;
+    float: left;
+    width: 15%;
+    height: 200px; }
+  .book-display-container .book-text {
+    padding: 10px;
+    float: right;
+    width: 81%; }
+
+body {
+  font-family: Open Sans; }
+
+header {
+  font-size: 30px; }
+
+.landing-page p {
+  text-align: center;
+  font-size: 30px; }
+  .landing-page p a {
+    text-decoration: none; }
