@@ -67,12 +67,6 @@ router.get('/books/edit', function(req, res, next) {
   });
 });
 
-router.get('/books/del', function(req, res, next) {
-  res.render('index', {
-    title: 'Galvanize-Reads'
-  });
-});
-
 router.get('/books/:id', function(req, res, next) {
   return knex('books')
     .where({
@@ -86,6 +80,15 @@ router.get('/books/:id', function(req, res, next) {
 
     })
 })
+router.post('/books/:id/delete', function(req, res, next){
+  knex('books')
+  .where({book_id: req.params.id})
+  .del()
+  .then(function(){
+    res.redirect('/books')
+  })
+})
+
 
 router.get('/authors', function(req, res, next) {
   var author_array = [];
@@ -146,11 +149,7 @@ router.get('/authors/edit', function(req, res, next) {
   });
 });
 
-router.get('/authors/del', function(req, res, next) {
-  res.render('index', {
-    title: 'Galvanize-Reads'
-  });
-});
+
 
 router.get('/authors/:id', function(req, res, next) {
   return knex('authors')
@@ -158,7 +157,7 @@ router.get('/authors/:id', function(req, res, next) {
       author_id: req.params.id
     })
     .then(function(data) {
-      console.log(data)
+      //console.log(data)
       res.render('authors_single', {
         data: data
       })
@@ -166,5 +165,13 @@ router.get('/authors/:id', function(req, res, next) {
     })
 })
 
+router.post('/authors/:id/delete', function(req, res, next){
+  knex('authors')
+  .where({author_id: req.params.id})
+  .del()
+  .then(function(){
+    res.redirect('/authors')
+  })
+})
 
 module.exports = router;

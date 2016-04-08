@@ -97,6 +97,14 @@ header {
   margin-left: 30%;
   padding-top: 10%; }
 
+.delete {
+  border: 0;
+  margin-left: 40%;
+  height: 50px;
+  background-color: rgba(237, 13, 13, 0.62);
+  width: 200px;
+  margin-bottom: 5%; }
+
 body {
   font-family: Open Sans; }
 
