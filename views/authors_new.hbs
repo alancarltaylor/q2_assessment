@@ -8,3 +8,16 @@
     <a href='/authors'><h2 class='rotate'>Authors</h2></a>
   </div>
 </nav>
+
+<form method='post' action='/authors/new' class='form-container'>
+  <h1>Create a new Author entry</h1>
+
+  <label>First Name</label><br><input type='text' placeholder='First Name' name='first_name'></input><br><br>
+  <label>Last Name</label><br><input type='text' placeholder='Last Name' name='last_name'></input><br><br>
+
+  <label>Biography</label><br><textarea placeholder='Biography' name='biography'></textarea><br><br>
+  <label>URL of the author's image</label><br><input type='text' placeholder='URL' name='portrait_url'></input><br><br>
+  <input type='submit' value="Add Author"></input>
+
+
+</form>

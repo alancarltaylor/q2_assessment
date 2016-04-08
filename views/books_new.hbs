@@ -12,11 +12,17 @@
 <form method='post' action='/books/new' class='form-container'>
   <h1>Create a new Book entry</h1>
 
-  <label>Book Title</label><br><input type='text' placeholder='Book Title'></input><br><br>
-  <label>Genre</label><br><input type='text' placeholder='Genre'></input><br><br>
-  <label>Description</label><br><textarea placeholder='Description'></textarea><br><br>
-  <label>URL of the book image</label><br><input type='text' placeholder='URL'></input><br><br>
-  <input type='submit'></input>
-
+  <label>Book Title</label><br><input type='text' placeholder='Book Title' name='title'></input><br><br>
+  <label>Genre</label><br><input type='text' placeholder='Genre' name='genre'></input><br><br>
+  <label>Description</label><br><textarea placeholder='Description' name='description'></textarea><br><br>
+  <label>URL of the book image</label><br><input type='text' placeholder='URL' name='cover_url'></input><br><br>
+  <input type='submit' value="Add Book"></input>
 
 </form>
+<!-- req.body -->
+<!-- {
+  title: "typedin",
+  genre: "typedin",
+  description: 'typedin',
+  cover_url: 'typedin'
+} -->

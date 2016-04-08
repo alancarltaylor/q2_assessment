@@ -22,7 +22,7 @@ exports.up = function(knex, Promise) {
 
 exports.down = function(knex, Promise) {
   return knex.schema
-    .dropTable('books')
-    .dropTable('authors')
-    .dropTable('authors_books')
+  .dropTable('books')
+  .dropTable('authors')
+  .dropTable('authors_books')
 };
