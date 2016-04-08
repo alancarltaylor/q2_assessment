@@ -75,7 +75,7 @@ header {
   width: 70%;
   margin-left: 5%;
   float: left;
-  background-color: blue;
+  background-color: rgba(125, 236, 240, 0.49);
   border: solid black 2px; }
   .book-display-container .book-wrap {
     overflow: auto; }
@@ -92,6 +92,10 @@ header {
     padding: 10px;
     float: right;
     width: 81%; }
+
+.form-container {
+  margin-left: 30%;
+  padding-top: 10%; }
 
 body {
   font-family: Open Sans; }

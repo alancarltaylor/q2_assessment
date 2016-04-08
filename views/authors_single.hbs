@@ -8,20 +8,18 @@
     <a href='/authors'><h2 class='rotate'>Authors</h2></a>
   </div>
 </nav>
-
 <div class='book-display-container'>
 
+{{#data}}
+<div class='book-wrap'>
+  <img src={{portrait_url}} class='book-cover'>
+  <div class='book-text'>
+    <h1>{{first_name}}</h1>
+    <h1>{{last_name}}</h1>
+    <h2>{{title}}</h2>
 
-  {{#data}}
-  <div class='book-wrap'>
-    <img src={{portrait_url}} class='book-cover'>
-    <div class='book-text'>
-      <h1>{{first_name}}</h1>
-      <h1>{{last_name}}</h1>
-      <h2>{{title}}</h2>
-
-      <p>{{biography}}</p>
-    </div>
-  </div><br><br><br>
-  {{/data}}
+    <p>{{biography}}</p>
+  </div>
+</div><br><br><br>
+{{/data}}
 </div>

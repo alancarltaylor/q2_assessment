@@ -37,7 +37,6 @@ router.get('/books', function(req, res, next) {
                 book_array[i].last_name.push(more_results[j].last_name)
               }
             }
-            //console.log(more_results)
           }
           res.render('books', {
             data: book_array
@@ -47,11 +46,12 @@ router.get('/books', function(req, res, next) {
     })
 })
 
+
 router.get('/books/new', function(req, res, next) {
-  res.render('index', {
-    title: 'Galvanize-Reads'
-  });
+  res.render('books_new');
 });
+
+router.post('books/new', function(req, res, next))
 
 router.get('/books/edit', function(req, res, next) {
   res.render('index', {
@@ -65,14 +65,55 @@ router.get('/books/del', function(req, res, next) {
   });
 });
 
+router.get('/books/:id', function(req, res, next){
+  return knex('books')
+  .where({book_id: req.params.id})
+  .then(function(data){
+    console.log(data)
+    res.render('books_single', {data: data})
+
+  })
+})
+
 router.get('/authors', function(req, res, next) {
-  res.render('authors', {
-    title: 'Galvanize-Reads'
-  });
+  var author_array = [];
+
+  return knex('authors')
+    .then(function(results) {
+      for (var i = 0; i < results.length; i++) {
+        author_array.push({
+          author_id: results[i].author_id,
+          first_name: results[i].first_name,
+          last_name: results[i].last_name,
+          biography: results[i].biography,
+          portrait_url: results[i].portrait_url,
+          title: []
+        })
+      }
+      return knex('authors')
+        .innerJoin('authors_books', 'authors.author_id', 'authors_books.author_id')
+        .innerJoin('books', 'authors_books.book_id', 'books.book_id')
+        .select('title', 'authors_books.author_id')
+        .then(function(more_results) {
+          for (var i = 0; i < author_array.length; i++) {
+            for (var j = 0; j < more_results.length; j++) {
+              if (author_array[i].author_id === more_results[j].author_id) {
+                author_array[i].title.push(more_results[j].title)
+              }
+            }
+          }
+          res.render('authors', {
+            data: author_array
+          })
+          console.log(author_array);
+        })
+    })
 });
 
+
+
 router.get('/authors/new', function(req, res, next) {
-  res.render('index', {
+  res.render('authors_new', {
     title: 'Galvanize-Reads'
   });
 });
@@ -89,6 +130,15 @@ router.get('/authors/del', function(req, res, next) {
   });
 });
 
+router.get('/authors/:id', function(req, res, next){
+  return knex('authors')
+  .where({author_id: req.params.id})
+  .then(function(data){
+    console.log(data)
+    res.render('authors_single', {data: data})
+
+  })
+})
 
 
 module.exports = router;
