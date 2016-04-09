@@ -8,3 +8,15 @@
     <a href='/authors'><h2 class='rotate'>Authors</h2></a>
   </div>
 </nav>
+{{#data}}
+<form method='post' action='/books/{{book_id}}/edit' class='form-container'>
+  <h1>Edit this book entry</h1>
+
+  <label>Book Title</label><br><input type='text' value='{{title}}' name='title'></input><br><br>
+  <label>Genre</label><br><input type='text' value='{{genre}}' name='genre'></input><br><br>
+  <label>Description</label><br><textarea name='description'>{{description}} </textarea><br><br>
+  <label>URL of the book image</label><br><input type='text' value='{{cover_url}}' name='cover_url'></input><br><br>
+  <input type='submit' value="Edit Book"></input>
+
+</form>
+{{/data}}

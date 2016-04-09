@@ -8,3 +8,16 @@
     <a href='/authors'><h2 class='rotate'>Authors</h2></a>
   </div>
 </nav>
+
+{{#data}}
+<form method='post' action='/authors/{{author_id}}/edit' class='form-container'>
+  <h1>Edit this author entry</h1>
+
+  <label>First Name</label><br><input type='text' value='{{first_name}}' name='first_name'></input><br><br>
+  <label>Last Name</label><br><input type='text' value='{{last_name}}' name='last_name'></input><br><br>
+  <label>Biography</label><br><textarea name='biography'>{{biography}} </textarea><br><br>
+  <label>URL of the author</label><br><input type='text' value='{{portrait_url}}' name='portrait_url'></input><br><br>
+  <input type='submit' value="Edit Author"></input>
+
+</form>
+{{/data}}
